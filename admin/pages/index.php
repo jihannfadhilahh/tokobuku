@@ -44,6 +44,42 @@ $db = new M_Library();
   include 'asset/modal.php';
   include 'asset/script.php';
   ?>
+  <script>
+  /*
+    Tujuan:
+    Untuk mengatur status centang pada checkbox sekaligus
+    contoh pemakaian 1:
+    centangSemua(document.getElementsByName("deleteAll[]"), true);
+    artinya, semua checkbox dengan nama deleteAll akan berstatus true atau dicentang
+
+    contoh pemakaian 2:
+    centangSemua(document.getElementsByName("madam[]"), false);
+    artinya, semua checkbox dengan nama "madam[]" akan berstatus false atau tidak dicentang dicentang
+  */
+  function centangSemua(yang_dicentang, nilai_dicentang)
+  {
+      for(var x = 0; x < yang_dicentang.length; x++){
+          yang_dicentang[x].checked = nilai_dicentang;
+      }
+  }
+
+  // skrip untuk menerapkan fungsi centangSemua diatas ke seluruh halaman
+  // dengan asumsi, semua name dari checkbox dari setiap halaman adalah sama
+
+  document.getElementById("centangAll").addEventListener("click", function(){
+    // variabel "this" disini merujuk ke document.getElementById("centangAll")
+
+    // jika centangAll tercentang atau bernilai true, maka centang checkbox yang lain
+    if(this.checked == true)
+    {
+      centangSemua(document.getElementsByName("deleteAll[]"), true);
+    }
+    else
+    {
+      centangSemua(document.getElementsByName("deleteAll[]"), false);
+    }
+  })
+  </script>
 </body>
 
 </html>

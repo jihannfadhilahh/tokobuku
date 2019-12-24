@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 22, 2019 at 04:26 PM
+-- Generation Time: Dec 24, 2019 at 10:14 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_bibit`
+-- Database: `db_tokobuku`
 --
 
 -- --------------------------------------------------------
@@ -60,7 +60,7 @@ CREATE TABLE `tb_informasi` (
 --
 
 INSERT INTO `tb_informasi` (`informasi_id`, `judul_informasi`, `keterangan`) VALUES
-(1, 'Tentang Kami', '<h3 style=\"text-align:justify\"><span style=\"font-size:22px\"><strong>UD. DWI PUTRA<br></strong></span></h3>\r\n<ul><li><br><span style=\"font-size:16px\">&nbsp;Desa Bangun Rejo adalah desa yang terdapat kecamatan kinali \r\nkabupaten Pasaman Barat, Di desa ini banyak pengusaha menengah kebawah \r\nyang meproduksi bibit sawit seerta penjualanya salah satu nya yaitu UD. \r\nDWI PUTRA Merupakan home industri kecil yang menampung serta mwnyalurkan\r\n SDA pada desa Bangun Rejo. \r\n						<br>&nbsp;\r\n						</span></li><li><span style=\"font-size:16px\">Pada tahun 2004  UD DWI PUTRA didirikan Oleh Bapak Jakim \r\nselaku pemilik serta Pimpinan pada UD. DWI PUTRA dan kariawanya hanya \r\ntetangga dan sanak keluarga dan pada akhirnya merekrut anggota dari luar\r\n kota untuk pengantaran yang diluar. Pada UD. DWI PUTRA Hingga Pada \r\ntahun 2017 UD. DWI Putra Memiliki 4 (empat) Kendaraan Truk pribadi dalam\r\n untuk mengantrakan Bibit sawit ke pemesan baik dari dalam kota maupun \r\nluar daerah.\r\n				</span></li></ul>\r\n\r\n<p></p>'),
+(1, 'Tentang Kami', '<p></p><p></p><ul></ul><p></p><p style=\"text-align: justify;\"><span style=\"font-size:22px\"><strong>Toko Buku G</strong></span>RAMEDIA<br></p><ul><li>Gramedia secara menyeluruh. \r\nMenjadikan perusahaan yang terbesar, terbaik, terpadu dan tersebar di \r\nAsia Tenggara, melalui usaha berbasis pengetahuan, untuk menciptakan \r\nmasyarakat terdidik, tercerahkan, menghargai kebhinekaan dan adil \r\nsejahtera.Pada tahun 1963 pertama kali yang menjadi awal dari Kompas \r\nGramedia, lahirlah Majalah Intisari.</li><li> Pada tahun 1965, lahir harian \r\nKompas. Nama Kompas sendiri diberi nama oleh Presiden Soekarno, yang \r\nbeliau harapkan mampu memberi pencerahan di jalan yang benar. Sementara \r\npada tahun 1970 lahirlah Toko Gramedia.\r\n\r\n<p></p></li></ul>'),
 (2, 'Cara Pemesanan', '<p style=\"text-align:justify\">1. Klik pada tombol \'Beli\' pada barang yang ingin Anda beli/pesan.</p>\r\n\r\n<p style=\"text-align:justify\">2. Barang yang Anda beli/pesan akan masuk ke dalam Keranjang Belanja. Anda dapat menentukan berapa jumlah yang akan dibeli, kemudian klik tombol \'Simpan\'.</p>\r\n\r\n<p style=\"text-align:justify\">3. Jika sudah selesai, klik tombol \'Selesai Belanja\' maka akan tampil data pembeli beserta barang yang dibeli/dipesannya. kemudian klik tombol \'Proses Order\' maka akan tampil total pembayaran serta nomor rekening pembayaran.</p>\r\n\r\n<p style=\"text-align:justify\">4. Apabila telah melakukan pembayaran, maka barang yang dibeli/dipesan akan segera dikirimkan.</p>\r\n\r\n');
 
 -- --------------------------------------------------------
@@ -571,10 +571,9 @@ CREATE TABLE `tb_kategori` (
 --
 
 INSERT INTO `tb_kategori` (`kategori_id`, `kategori_nama`) VALUES
-(1, 'Sawit (PPKS) Marihat Klon / MK'),
-(2, 'Sawit Sucfindo'),
-(22, 'Sawit Lonsum'),
-(25, 'Sawit Topaz');
+(28, 'Novel'),
+(29, 'Cerita Anak'),
+(30, 'Komputer');
 
 -- --------------------------------------------------------
 
@@ -615,7 +614,8 @@ INSERT INTO `tb_konfirmasi` (`konfirmasi_id`, `transaksi_id`, `bank_pengirim`, `
 (12, '20191201115213', 'yuyu', 'y', 'uyiuu', '2019-12-01', 72, '20191201120152mm.png'),
 (13, '20191201121219', 'BRI', 'BRI', 'Rafi', '2019-12-03', 1750000, '20191201121347logo.png'),
 (14, '20191202022438', 'Dolor culpa exercit', 'Qui distinctio Enim', 'Consequatur saepe a', '2005-12-18', 79, '20191202044548logo.png'),
-(15, '20191222041352', 'BRI', 'BNI', 'Brek', '2019-12-22', 1320000, '20191222041633koper.jpg');
+(15, '20191222041352', 'BRI', 'BNI', 'Brek', '2019-12-22', 1320000, '20191222041633koper.jpg'),
+(16, '20191224091146', 'BRI`', 'BRI', 'Rafi', '2019-12-24', 189000, '20191224092532tere.png');
 
 -- --------------------------------------------------------
 
@@ -642,8 +642,7 @@ CREATE TABLE `tb_member` (
 
 INSERT INTO `tb_member` (`member_id`, `member_nama`, `member_email`, `member_nohp`, `tgl_daftar`, `provinsi_id`, `kabkota_id`, `kode_pos`, `password`, `member_alamat`) VALUES
 (4, 'Rafi Sehendra', 'rafisahendra07@gmail.com', '085345445454', '2019-12-01', 6, 70, '27684', 'fafae7c0cbe4b1aa33bb9abd857e80c4', 'Jl pasar usang, Parit malintang II'),
-(13, 'Misdianto ', 'midianto@gmail.com', '085376767676', '2019-12-02', 6, 78, '27684', '25d55ad283aa400af464c76d713c07ad', 'Ujung gading pasaman'),
-(14, 'rebo', 'rebo@gmail.com', '0853454545', '2019-12-22', 6, 78, '27684', '303e1dc4fe6162361b99f3330530d95f', 'Kinali');
+(13, 'Misdianto ', 'midianto@gmail.com', '085376767676', '2019-12-02', 6, 78, '27684', '25d55ad283aa400af464c76d713c07ad', 'Ujung gading pasaman');
 
 -- --------------------------------------------------------
 
@@ -703,11 +702,10 @@ CREATE TABLE `tb_produk` (
 --
 
 INSERT INTO `tb_produk` (`produk_id`, `kategori_id`, `produk_nama`, `gambar_produk`, `produk_tgl`, `produk_harga`, `produk_stok`, `produk_keterangan`) VALUES
-(17, 3, 'Sawit pasaman (Kinali)', '2019111907191577.jpg', '2019-11-20', 175000, 25, 'Sawit mantap'),
-(18, 2, 'UKM Sumber Urep (Bibit Marihat)', '20191126104833Topaz.jpg', '2019-12-02', 30000, 150, 'Sawit degan kualitas terbaik dan daun pelepah panjang'),
-(19, 22, 'Kelompok Tani (KT) Makmur sentosa (Biibit Sucfindo)', '20191126104844Lonsum.jpg', '2019-12-02', 27000, 100, 'Sawit terbaik kinali'),
-(20, 2, 'UKM Tanamo Jaya (Bibit Lonsum)', '20191126104907sucfindon.jpg', '2019-12-02', 25000, 191, 'Sawit dengan daun pelepah pendek\r\n'),
-(21, 25, 'Kelompok Tani (KT) Karya Mandiri (Bibit Topaz', '20191126104917Topaz.jpg', '2019-12-02', 18000, 200, 'Sawit produksi Bangun rejo');
+(23, 28, 'Dillan 1991', '20191224073300dillan.jpg', '2019-12-24', 45000, 23, 'Dillan dan milea'),
+(24, 29, '(Simba) Seri Fabel Anak Muslim', '20191224073804anak.jpg', '2019-12-24', 25000, 14, 'Cerita Anak Seri Fabel Anak Muslim, Buku Anak\r\n1set : 10 buku.\r\nUkuran : 21 x 20 cm\r\nTebal : 24 halaman'),
+(25, 30, 'Laravel 58 Programing', '20191224080540lara.jpg', '2019-12-24', 139000, 25, ' Laravel 5.8. Cukup banyak perubahan, terutama dari sisi routing dan security,'),
+(26, 28, 'Tere liye Hujan', '20191224080728tere.png', '2019-12-24', 20000, 23, 'Novel pergi - tere liye\r\n\r\nBuku bacaan murah, kwalitas ok, baru dan segel, siap di order ');
 
 -- --------------------------------------------------------
 
@@ -781,9 +779,7 @@ CREATE TABLE `tb_transaksi` (
 --
 
 INSERT INTO `tb_transaksi` (`transaksi_id`, `tgl_pesan`, `member_id`, `total_bayar`, `status`, `ongkir_id`, `pesan_pemesanan`) VALUES
-('20191202022438', '2019-12-02', 4, 167000, 'Pesanan Diterima', 23, 'BG BG '),
-('20191202052315', '2019-12-02', 13, 66000, 'Belum Konfirmasi', 7, 'Mantaps '),
-('20191222041352', '2019-12-22', 14, 1320000, 'Pesanan Diterima', 7, 'sesuai alamat ya bg ');
+('20191224091146', '2019-12-24', 4, 189000, 'Pesanan Diterima', 23, 'Pesanan yang sesuai ya bg ');
 
 -- --------------------------------------------------------
 
@@ -808,7 +804,8 @@ INSERT INTO `tb_transaksi_detail` (`detail_id`, `transaksi_id`, `produk_id`, `ju
 (44, '20191202022438', 19, 3, 81000),
 (45, '20191202052315', 21, 2, 36000),
 (46, '20191222041352', 20, 30, 750000),
-(47, '20191222041352', 19, 20, 540000);
+(47, '20191222041352', 19, 20, 540000),
+(48, '20191224091146', 25, 1, 139000);
 
 --
 -- Indexes for dumped tables
@@ -908,19 +905,19 @@ ALTER TABLE `tb_informasi`
 -- AUTO_INCREMENT for table `tb_kategori`
 --
 ALTER TABLE `tb_kategori`
-  MODIFY `kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `tb_keranjang`
 --
 ALTER TABLE `tb_keranjang`
-  MODIFY `keranjang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `keranjang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT for table `tb_konfirmasi`
 --
 ALTER TABLE `tb_konfirmasi`
-  MODIFY `konfirmasi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `konfirmasi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tb_member`
@@ -938,7 +935,7 @@ ALTER TABLE `tb_ongkir`
 -- AUTO_INCREMENT for table `tb_produk`
 --
 ALTER TABLE `tb_produk`
-  MODIFY `produk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `produk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `tb_provinsi`
@@ -950,7 +947,7 @@ ALTER TABLE `tb_provinsi`
 -- AUTO_INCREMENT for table `tb_transaksi_detail`
 --
 ALTER TABLE `tb_transaksi_detail`
-  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -26,7 +26,9 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr align="center">
-            <th width="10px;">#</th>
+            <th width="10px;">
+            <input type="checkbox" id='centangAll' >
+            </th>
             <th width="10px;">No</th>
             <th>Gambar Produk</th>
             <th>Nama Produk</th>

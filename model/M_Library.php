@@ -43,7 +43,7 @@ class M_Library extends Db{
     }
 
     function jumlah_transaksi(){
-        $transaksi = $this->jumlah_fetchColumn("SELECT count(*) FROM tb_transaksi");
+        $transaksi = $this->jumlah_fetchColumn("SELECT count(*) FROM tb_transaksi Where status= 'Pesanan Diterima'");
         return $transaksi;
     }
 
@@ -190,13 +190,12 @@ class M_Library extends Db{
     }
 
 
+    // $id harus berupa array
     function hapus_produkAll($id){
-
-    $id_count= count($id);
-    for($i=0;$i<$id_count;$i++){
-   
-   $this->universal("DELETE From tb_produk where produk_id='$id[$i]'");
-    }
+        foreach($id as $i)
+        {
+            $this->universal("DELETE From tb_produk where produk_id='$i'");
+        }
     }
     
 

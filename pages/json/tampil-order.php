@@ -1,7 +1,7 @@
 <?php
 
 
- $db = new PDO("mysql:host=localhost;dbname=db_bibit",'root','');
+ $db = new PDO("mysql:host=localhost;dbname=db_tokobuku",'root','');
  $id = $_GET['id_js'];
 
 // buat query untuk ambil data dari database

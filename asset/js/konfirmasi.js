@@ -1,6 +1,6 @@
 
 
-var url = "http://localhost/uddwiputra/pages/json/";
+var url = "http://localhost/gramedia/pages/json/";
 
 function cek_no_order() {
   var id_js = document.getElementById("noorder").value;
