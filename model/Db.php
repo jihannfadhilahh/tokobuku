@@ -54,7 +54,3 @@ class Db {
 }
 
 ?>
-
-<!-- test yo -->
-
-
