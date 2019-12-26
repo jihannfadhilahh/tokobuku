@@ -766,7 +766,7 @@ INSERT INTO `tb_provinsi` (`provinsi_id`, `nama_provinsi`) VALUES
 
 CREATE TABLE `tb_transaksi` (
   `transaksi_id` varchar(15) NOT NULL,
-  `tgl_pesan` date NOT NULL DEFAULT current_timestamp(),
+  `tgl_pesan` timestamp,
   `member_id` int(11) NOT NULL,
   `total_bayar` int(11) NOT NULL,
   `status` varchar(50) NOT NULL DEFAULT 'Menunggu Pembayaran',
