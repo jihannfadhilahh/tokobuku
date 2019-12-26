@@ -1,8 +1,11 @@
 <?php
 
+  require_once "../../model/Db.php";
+  $pdo = new Db();
+  
+  $db = $pdo->db;
 
- $db = new PDO("mysql:host=localhost;dbname=db_tokobuku",'root','');
- $id = $_GET['id_js'];
+  $id = $_GET['id_js'];
 
 // buat query untuk ambil data dari database
 
