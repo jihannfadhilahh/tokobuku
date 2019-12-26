@@ -119,7 +119,7 @@ class M_Library extends Db{
         }
     
     function hapus_member($id){
-    $this->universal("DELETE from tb_member where member_id = $id");
+    $this->query("DELETE from tb_member where member_id = $id");
       
     }
 
@@ -128,7 +128,7 @@ class M_Library extends Db{
         function hapus_memberAll($id){
             foreach($id as $i)
             {
-                $this->universal("DELETE From tb_member where member_id='$i'");
+                $this->query("DELETE From tb_member where member_id='$i'");
             }
         }
         
@@ -160,14 +160,14 @@ class M_Library extends Db{
   
     }
     function hapus_kategori($id){
-    $this->universal("DELETE From tb_kategori where kategori_id='$id'");
+    $this->query("DELETE From tb_kategori where kategori_id='$id'");
     }
 
       // $id harus berupa array
       function hapus_kategoriAll($id){
         foreach($id as $i)
         {
-            $this->universal("DELETE From tb_kategori where kategori_id='$i'");
+            $this->query("DELETE From tb_kategori where kategori_id='$i'");
         }
     }
     
@@ -205,7 +205,7 @@ class M_Library extends Db{
   
     }
     function hapus_produk($id){
-    $this->universal("DELETE From tb_produk where produk_id='$id'");
+    $this->query("DELETE From tb_produk where produk_id='$id'");
     }
 
 
@@ -213,7 +213,7 @@ class M_Library extends Db{
     function hapus_produkAll($id){
         foreach($id as $i)
         {
-            $this->universal("DELETE From tb_produk where produk_id='$i'");
+            $this->query("DELETE From tb_produk where produk_id='$i'");
         }
     }
     
@@ -268,14 +268,14 @@ class M_Library extends Db{
   
     }
     function hapus_ongkir($id){
-    $this->universal("DELETE From tb_ongkir where ongkir_id='$id'");
+    $this->query("DELETE From tb_ongkir where ongkir_id='$id'");
     }
 
         // $id harus berupa array
         function hapus_ongkirAll($id){
             foreach($id as $i)
             {
-                $this->universal("DELETE From tb_ongkir where ongkir_id='$i'");
+                $this->query("DELETE From tb_ongkir where ongkir_id='$i'");
             }
         }
     function update_ongkir($id, $provinsi,$kabkota,$ongkir){
@@ -296,7 +296,7 @@ class M_Library extends Db{
     }
 
     function hapus_transaksi($id){
-        $query = $this->universal("DELETE From tb_transaksi where transaksi_id=$id");
+        $query = $this->query("DELETE From tb_transaksi where transaksi_id=$id");
         return $query;
     }
 
@@ -305,19 +305,19 @@ class M_Library extends Db{
         function hapus_transaksiAll($id){
             foreach($id as $i)
             {
-                $this->universal("DELETE From tb_transaksi where transaksi_id='$i'");
+                $this->query("DELETE From tb_transaksi where transaksi_id='$i'");
             }
         }
     function status_transaksi( $id, $status){
 
         // echo "   UPDATE `tb_transaksi` SET `status`='$status' WHERE `transaksi_id`='$id'";exit;
-        $query = $this->universal("UPDATE `tb_transaksi` SET `status`='$status' WHERE `transaksi_id`='$id'");
+        $query = $this->query("UPDATE `tb_transaksi` SET `status`='$status' WHERE `transaksi_id`='$id'");
         return $query;
     }
     function pesanan_diterima( $id, $status){
 
         // echo "   UPDATE `tb_transaksi` SET `status`='$status' WHERE `transaksi_id`='$id'";exit;
-        $query = $this->universal("UPDATE `tb_transaksi` SET `status`='$status' WHERE `transaksi_id`='$id'");
+        $query = $this->query("UPDATE `tb_transaksi` SET `status`='$status' WHERE `transaksi_id`='$id'");
         return $query;
     }
     
@@ -453,7 +453,7 @@ class M_Library extends Db{
     }
     //Hapus keranjang
     function hapus_keranjang($id){
-        $this->universal("DELETE From tb_keranjang where keranjang_id='$id'");
+        $this->query("DELETE From tb_keranjang where keranjang_id='$id'");
     }
 
     //ongkos kirim 
@@ -530,7 +530,7 @@ class M_Library extends Db{
         $nama_baru = date('Ymdhis').$upload;
         move_uploaded_file($lokasi,"../images/konfirmasi/".$nama_baru);
     
-        $stat = $this->universal("INSERT INTO `tb_konfirmasi`( `transaksi_id`, `bank_pengirim`, `bank_penerima`, `nama_pengirim`, `tgl_transfer`, `jumlah_transfer`, `bukti_transfer`) VALUES('$id','$b_pengirim','$b_penerima','$nama','$tgl','$j_kirim','$nama_baru')");
+        $stat = $this->query("INSERT INTO `tb_konfirmasi`( `transaksi_id`, `bank_pengirim`, `bank_penerima`, `nama_pengirim`, `tgl_transfer`, `jumlah_transfer`, `bukti_transfer`) VALUES('$id','$b_pengirim','$b_penerima','$nama','$tgl','$j_kirim','$nama_baru')");
         return $stat;
 
 
