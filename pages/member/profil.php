@@ -107,7 +107,7 @@
                             </select>
 
                             <label for="">Alamat</label>
-                            <textarea name="alamat" id="" cols="43" rows="3" required></textarea>
+                            <textarea name="alamat" id="" cols="43" rows="3" class="form-control" required></textarea>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="">Nohp</label>
