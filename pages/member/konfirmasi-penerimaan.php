@@ -28,7 +28,7 @@
             <div class="row">
     <div class="col-lg-1"></div>
                 <div class="col-lg-10">
-                  <h3 style="color:red;">* Tolong lakukan konfirmasi jika pesanan telah sampai dimpat</h3>
+                  <h3 style="color:red;">* Tolong lakukan konfirmasi jika pesanan telah sampai ditempat</h3>
                     <div class=" table-responsive">
                         <table class="table " >
                             <thead>
@@ -45,11 +45,14 @@
                             <tbody>
                            <?php 
                            $hasil=0;
-                           foreach($db->daftar_pembelian($_SESSION['member_id']) as $i=> $k): ?>
+                           $no = 1;
+                           $data_pembelian = $db->daftar_pembelian($_SESSION['member_id']);
+                           
+                           foreach($data_pembelian as $i=> $k): ?>
                         
                          <?php if($k->status == "Proses Pengiriman"){?>
                                 <tr>
-                                    <td><?= $i+1; ?></td>
+                                    <td><?= $no; $no++; ?></td>
                                     <td class="thumbnail-img">
                                         <a href="#">
 							      	              	<?= $k->transaksi_id?>
@@ -79,14 +82,10 @@
                                       </form>
                                     </td>
                                 </tr>
-                         <?php }else{ ?>
-
-                          <tr>
-                           
-                          <td colspan="7" align="center"> <i > <h3> "Belum ada Pesanan "</h3></i> </td>
-                          </tr>
-                          <?php } ?>
-                            <?php endforeach ?>
+                        <?php
+                          }
+                          endforeach;
+                        ?>
 
                         
                             
