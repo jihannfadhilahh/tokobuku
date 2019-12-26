@@ -6,3 +6,6 @@
 6.	Menampilkan grafik penjualan pada dashboard
 7.	Di backend pada data buku tambahkan kolom banyaknya bukuterjual(dashboard)
 8.	Pada backend tambah checkbox pada table untukmenghapus data sekaligus
+
+
+<!-- Wonload beko codiad -->

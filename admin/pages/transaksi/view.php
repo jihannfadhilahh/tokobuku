@@ -1,7 +1,23 @@
 
 <!-- Page Heading -->
 <!-- DataTales Example -->
+
+
 <div class="card shadow mb-4">
+
+<form action="../../controller/AdmController.php?aksi=hapus_transaksiAll" Method="POST">
+  <div class="card-header py-3">
+    <h6 class=" font-weight-bold text-right">Data: Transaksi</h6>
+  
+
+    <button class="btn btn-danger btn-icon-split btn-sm">
+      <span class="icon text-white-50">
+        <i class="fas fa-plus"></i>
+      </span>
+      <span class="text" >Hapus</span>
+      </button>
+  </div>
+</form>
 
   <div class=" card-body">
 
@@ -9,6 +25,9 @@
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr align="center">
+            <th width="10px;">
+            <input type="checkbox" id='centangAll' >
+            </th>
               <th width="10px;">No</th>
               <th>No Order</th>
               <th>Nama Pelangan</th>
@@ -25,6 +44,9 @@
         $no=1;
         foreach($db->tampil_transaksi() as $no=> $d ):?>
             <tr align="center">
+            <td>
+            <input type="checkbox" name="deleteAll[]" value="<?= $d->transaksi_id?>">
+          </td>
               <td><?= $no+1 ?></td>
               <td><?= $d->transaksi_id ?></td>
               <td><?= $d->member_nama ?></td>

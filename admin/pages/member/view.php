@@ -1,6 +1,7 @@
 
 <!-- Page Heading -->
 <!-- DataTales Example -->
+<form action="../../controller/AdmController.php?aksi=hapus_memberAll" Method="POST">
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <h6 class=" font-weight-bold text-right">Data: Member</h6>
@@ -11,6 +12,12 @@
       <span class="text" data-toggle="modal" data-target="#exampleModal">Tambah</span>
     </a> -->
 
+    <button class="btn btn-danger btn-icon-split btn-sm">
+      <span class="icon text-white-50">
+        <i class="fas fa-plus"></i>
+      </span>
+      <span class="text" >Hapus</span>
+      </button>
 
   </div>
   <div class=" card-body">
@@ -19,6 +26,10 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr align="center">
+          <th width="10px;">
+            <input type="checkbox" id='centangAll' >
+            </th>
+           
             <th width="10px;">No</th>
           
             <th>Nama Member</th>
@@ -35,6 +46,9 @@
           <?php
         foreach($db->tampil_member() as $no=> $d ):?>
           <tr align="center">
+          <td>
+            <input type="checkbox" name="deleteAll[]" value="<?= $d->member_id?>">
+          </td>
             <td><?= $no+1 ?></td>
         
             <td><?= $d->member_nama ?></td>
@@ -64,7 +78,7 @@
                     <h5 class="modal-title" id="exampleModalLabel">Hapus Data</h5>
 
                   </div>
-                  <form action="../../controller/AdmController.php?aksi=hapus_memeber&id=<?= $d->member_id ?>"
+                  <form action="../../controller/AdmController.php?aksi=hapus_member&id=<?= $d->member_id ?>"
                     method="POST">
                     <div class="modal-body">
                       <label for="">Data yang dihapus tidak dapat di kembalikan, Apakah anda Yakin?</label>

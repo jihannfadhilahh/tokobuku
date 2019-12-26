@@ -34,6 +34,9 @@ if($aksi == 'change'){
     }elseif($aksi == 'hapus_kategori'){
         $db->hapus_kategori($_GET['id']);
         header('location:../admin/pages/index.php?module=kategori/view');
+    }elseif($aksi == 'hapus_kategoriAll'){
+        $db->hapus_kategoriAll($_POST['deleteAll']);
+        header('location:../admin/pages/index.php?module=kategori/view');
     }elseif($aksi == 'update_kategori'){
         $db->update_kategori($_POST['id'], $_POST['nama_k']);
         header('location:../admin/pages/index.php?module=kategori/view');
@@ -55,17 +58,26 @@ if($aksi == 'change'){
     }elseif($aksi == 'hapus_ongkir'){
         $db->hapus_ongkir($_GET['id']);
         header('location:../admin/pages/index.php?module=ongkir/view');
+    }elseif($aksi == 'hapus_ongkirAll'){
+        $db->hapus_ongkirAll($_POST['deleteAll']);
+        header('location:../admin/pages/index.php?module=ongkir/view');
     }elseif($aksi == 'update_ongkir'){
         $db->update_ongkir($_POST['id'], $_POST['p_id'],$_POST['k_id'],$_POST['ongkos_k']);
         header('location:../admin/pages/index.php?module=ongkir/view');
     }elseif($aksi=='hapus_transaksi'){
         $db->hapus_transaksi($_GET['id']);
         header('location:../admin/pages/index.php?module=transaksi/view');
+    }elseif($aksi=='hapus_transaksiAll'){
+        $db->hapus_transaksiAll($_POST['deleteAll']);
+        header('location:../admin/pages/index.php?module=transaksi/view');
     }elseif($aksi=='status_transaksi'){
         $db->status_transaksi($_GET['id'],$_POST['status']);
         header('location:../admin/pages/index.php?module=transaksi/view');
-    }elseif($aksi=='hapus_memeber'){
+    }elseif($aksi=='hapus_member'){
         $db->hapus_member($_GET['id']);
+        header('location:../admin/pages/index.php?module=member/view');
+    }elseif($aksi=='hapus_memberAll'){
+        $db->hapus_memberAll($_POST['deleteAll']);
         header('location:../admin/pages/index.php?module=member/view');
     }
 

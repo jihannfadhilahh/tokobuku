@@ -123,6 +123,16 @@ class M_Library extends Db{
       
     }
 
+
+        // $id harus berupa array
+        function hapus_memberAll($id){
+            foreach($id as $i)
+            {
+                $this->universal("DELETE From tb_member where member_id='$i'");
+            }
+        }
+        
+
     function update_admin($id, $pass, $konfirmasi){
 
         
@@ -152,6 +162,15 @@ class M_Library extends Db{
     function hapus_kategori($id){
     $this->universal("DELETE From tb_kategori where kategori_id='$id'");
     }
+
+      // $id harus berupa array
+      function hapus_kategoriAll($id){
+        foreach($id as $i)
+        {
+            $this->universal("DELETE From tb_kategori where kategori_id='$i'");
+        }
+    }
+    
 
     function update_kategori($id, $nama){
     $stmt = $this->db->prepare("UPDATE tb_kategori set kategori_nama=:nma where kategori_id=:id");
@@ -252,6 +271,13 @@ class M_Library extends Db{
     $this->universal("DELETE From tb_ongkir where ongkir_id='$id'");
     }
 
+        // $id harus berupa array
+        function hapus_ongkirAll($id){
+            foreach($id as $i)
+            {
+                $this->universal("DELETE From tb_ongkir where ongkir_id='$i'");
+            }
+        }
     function update_ongkir($id, $provinsi,$kabkota,$ongkir){
         
     $stmt = $this->db->prepare("UPDATE tb_ongkir set kabkota_id=:kabkota, provinsi_id=:provinsi, ongkos_kirim=:ongkir where ongkir_id=:id");
@@ -274,6 +300,14 @@ class M_Library extends Db{
         return $query;
     }
 
+
+        // $id harus berupa array
+        function hapus_transaksiAll($id){
+            foreach($id as $i)
+            {
+                $this->universal("DELETE From tb_transaksi where transaksi_id='$i'");
+            }
+        }
     function status_transaksi( $id, $status){
 
         // echo "   UPDATE `tb_transaksi` SET `status`='$status' WHERE `transaksi_id`='$id'";exit;

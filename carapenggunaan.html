@@ -1,0 +1,44 @@
+
+Cara penggunaan dari transaksi sampai Konfirmasi di admin:
+1.pengunnjung diharuskan mendaftar sebagai member untuk belanja buku
+2.Halaman awal/frontend 'tentang kami' dan cara pembelian dapat di edit di halaman admin
+3.Setelah registrasi maka pelanggan akan di arahkan ke halaman login 
+4.jika telah login maka member diharuskan mengisi lengkap biodata alamat dll, di menu Profil jika belum         lengkap maka tombol checkout disable
+5.Untuk berbelanja Lihat detail 'barang'  ada 2 tombol
+    -"Masukan keranjang" hanya masuk ke keranjang 'icon keranjang ada angka yg bertambah'
+    -"Beli Sekarang" Di arahka ke halaman Keranjang berbelanja 
+6.setelah halaman belanja maka checkout, dengan mengirimkan pesan jika perlu
+
+/*Menu SHOP  
+    -Keranjang belanja
+    -Daftar Pembelian
+    -Konfirmasi pembayaran
+    -Konfirmasi Penerimaan
+*/
+7.Setelah checkout kita di arakhan ke halaman daftar pembelian dengan status belanja "Belum Dikonfirmasi"       Jika belum ada konfirmasi pembayaran maka dihalaman admin Aksi lihat struk dan menu konfirmasi belum muncul,  yang ada hanya detail dan hapus  
+8.setelah itu lakukan pembayaran di menu SHOP->Konfimasi Pembayaran, dengan memasukan nomor Pemesanan maka      sistem akan mengecek otomatiss Listnya.
+9.Setelah konfirmasi maka status belanja Berubah menjadi "Konfirmasi Pembayaran" Maka selanjutnya pihak         admin akan mengkonfirmasinya
+
+
+10. Masuk Admin alamat localhost/gramedia/admin/
+    ./Halman Admin
+    Ada 2 aktor yaitu:
+    -Admin
+    username : admin@admin.com
+    pass     : 123456789
+
+    -Pimpinan
+    username : pimpinan@pimpinan.com
+    pass     : 123456789
+
+    nb: pass type Hash
+
+11.Masuk ke halaman "Master data->Transaksi"
+    Admin Meliat Apakah sesuai jumlah  dibayar pada detail dengan struk bukti mebayaran/pembayaran 
+12.Jika sesuai maka status diganti menjadi "Pembayaran Diterima" jika barang sudah dikirim maka status           diganti menjadi  Proses Pengiriman.
+13 Teraksir member Akan mengkonfirmasi Pesanan Di terima di halaman SHOP->Konfirmasi Penerimaan.
+
+
+<!-- Selesai -->
+
+

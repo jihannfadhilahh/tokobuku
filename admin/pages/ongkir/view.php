@@ -1,6 +1,7 @@
 
 <!-- Page Heading -->
 <!-- DataTales Example -->
+<form action="../../controller/AdmController.php?aksi=hapus_ongkirAll" Method="POST">
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <h6 class=" font-weight-bold text-right">Data: Ongkos Kirim</h6>
@@ -11,7 +12,12 @@
       <span class="text" data-toggle="modal" data-target="#exampleModal">Tambah</span>
     </a>
 
-
+    <button class="btn btn-danger btn-icon-split btn-sm">
+      <span class="icon text-white-50">
+        <i class="fas fa-plus"></i>
+      </span>
+      <span class="text" >Hapus</span>
+      </button>
   </div>
   <div class=" card-body">
 
@@ -19,6 +25,10 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr align="center">
+          <th width="10px;">
+            <input type="checkbox" id='centangAll' >
+            </th>
+           
             <th width="10px;">No</th>
             <th>Provinsi</th>
             <th>Kabupaten/Kota</th>
@@ -34,6 +44,9 @@
         $no=1;
         foreach($db->tampil_ongkir() as $no=> $d ):?>
           <tr align="center">
+          <td>
+            <input type="checkbox" name="deleteAll[]" value="<?= $d->ongkir_id?>">
+          </td>
             <td><?= $no+1 ?></td>
            
             <td><?= $d->nama_provinsi ?></td>
